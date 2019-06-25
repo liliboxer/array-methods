@@ -29,10 +29,10 @@ describe('array-methods', () => {
     expect(reduced).toEqual(9);
   });
 
-  it('returns true', () => {
+  it('returns false', () => {
     const arr = [1, 2, -3, 4];
     const value = every(arr, arr => arr > 1);
-    expect(value).toEqual(true);
+    expect(value).toEqual(false);
   });
 
 });
