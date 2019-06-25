@@ -1,16 +1,17 @@
-const numbers = [1, 2, 3, 4];
+const pets = ['Max', 'Boo', 'Sam'];
 
-// created new array from old array
-const doubledNumbers = [...numbers];
+function sayHi() {
+  return 'hi';
+}
+
+const hiArray = [...pets];
 
 function map(arr) {
-  // loop through the array
-  for(let i = 0; i < arr.length; i++ ) {
-    // grab each one
-    const item = arr[i];
-    item * 2;
-    console.log(item);
-  };
+  for (let i = 0; i < arr.length; i++) {
+   
+  }
 };
 
-console.log(map(numbers));
+console.log(hiArray);
+
+
