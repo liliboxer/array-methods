@@ -20,16 +20,18 @@ const test = ['max', 'orangetabby', 'cat', 'meow', '8', 'maxwell'];
 function filter(arr, callback) {
   const filtered = [];
   for(let i = 0; i < arr.length; i++) {
-    filtered[i] = callback(arr[i]);
-    if(filtered[i] === true) {
-      filtered[i] = arr[i];
-    } 
+    if(callback(arr[i])) {
+      filtered[filtered.length] = arr[i];
+      console.log('length', filtered.length);
+      console.log('i', i);
+
+    }
   }
   return filtered;
 }
 
 const filtered = filter(test, arr => arr.length < 4);
-console.log(filtered);
+console.log('hi', filtered);
 
 module.exports = {
   map,
