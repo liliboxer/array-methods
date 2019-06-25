@@ -21,16 +21,17 @@ function filter(arr, callback) {
   const filtered = [];
   for(let i = 0; i < arr.length; i++) {
     filtered[i] = callback(arr[i]);
-    console.log('arr', callback(arr[i]));
     if(filtered[i] === true) {
-      console.log(arr[i]);
-      return arr[i];
+      filtered[i] = arr[i];
+      return filtered[i];
+    } else {
+      return false;
     }
   }
 }
 
-const filtered = filter(test, arr => arr.length < 4);
-console.log('hi', filtered);
+const filtered = filter(test, arr => arr.length < 1);
+console.log(filtered);
 
 module.exports = {
   map,
