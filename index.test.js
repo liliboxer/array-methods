@@ -1,4 +1,4 @@
-const { map, filter, findByIndex } = require('./index');
+const { map, filter, findByIndex, reduce } = require('./index');
 
 describe('array-methods', () => {
   it('doubles array', () => {
@@ -19,10 +19,10 @@ describe('array-methods', () => {
     expect(index).toEqual(1);
   });
 
-  // it('add numbers together', () => {
-  //   const arr = [2, 3, 4];
-  //   const reduced = reduce(arr, (acc, x) => acc + x);
-  //   expect(reduced).toEqual(9);
-  // });
+  it('add numbers together', () => {
+    const arr = [2, 3, 4];
+    const reduced = reduce(arr, (acc, x) => acc + x);
+    expect(reduced).toEqual(9);
+  });
 
 });

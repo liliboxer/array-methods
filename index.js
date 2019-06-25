@@ -20,33 +20,23 @@ function findByIndex(arr, callback) {
   for(let i = 0; i < arr.length; i++) {
     if(callback(arr[i])) {
       return i;
-    } else {
-      return -1;
     }
   }
+  return -1;
 }
 
-
-
-
-// function reduce(arr, callback) {
-//   let reduced;
-//   for(let i = 0; i < arr.length; i++) {
-//     reduced = callback(arr[i]);
-//   }
-//   return reduced;
-// }
-
-// const reduced = reduce(arr, (acc, x) => acc + x);
-
-
-
-
+function reduce(arr, callback) {
+  let reduced = arr[0];
+  for(let i = 1; i < arr.length; i++) {
+    reduced = callback(reduced, arr[i]);
+  }
+  return reduced;
+}
 
 module.exports = {
   map,
   filter,
   findByIndex,
-  // reduce
+  reduce
 };
 
