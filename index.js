@@ -15,15 +15,17 @@ const double = map(numbers, arr => arr * 2);
 ///
 
 
-const test = ['max', 'orange', 'budd', 'black'];
+const test = ['max', 'orangetabby', 'cat', 'meow', '8', 'maxwell'];
 
 function filter(arr, callback) {
   const filtered = [];
   for(let i = 0; i < arr.length; i++) {
     filtered[i] = callback(arr[i]);
+    console.log('arr', callback(arr[i]));
     if(filtered[i] === true) {
-      filtered.push(arr[i]);
-    } return filtered;
+      console.log(arr[i]);
+      return arr[i];
+    }
   }
 }
 

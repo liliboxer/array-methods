@@ -8,9 +8,9 @@ describe('array-methods', () => {
   });
 
   it('includes orange', () => {
-    const arr = ['max', 'orange'];
+    const arr = ['max', 'orangetabby', 'cat', 'meow', '8', 'maxwell'];
     const filtered = filter(arr, arr => arr.length < 4);
-    expect(filtered).toEqual(arr);
+    expect(filtered).toEqual(['max', 'cat', '8']);
   });
 
 });
