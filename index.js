@@ -1,17 +1,13 @@
-const pets = ['Max', 'Boo', 'Sam'];
 
-function sayHi() {
-  return 'hi';
-}
-
-const hiArray = [...pets];
-
-function map(arr) {
-  for (let i = 0; i < arr.length; i++) {
-   
+function map(arr, callback) {
+  const mapped = [];
+  for(let i = 0; i < arr.length; i++) {
+    mapped[i] = callback(arr[i]);
   }
+  return mapped;
 };
 
-console.log(hiArray);
-
+module.exports = {
+  map
+}
 
