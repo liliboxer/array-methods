@@ -7,7 +7,16 @@ function map(arr, callback) {
   return mapped;
 };
 
+function filter(arr, callback) {
+  const filtered = [];
+  for (let i = 0; i < arr.length; i++) {
+  
+    
+  }
+}
+
 module.exports = {
-  map
+  map,
+  filter
 }
 
