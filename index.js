@@ -23,14 +23,12 @@ function filter(arr, callback) {
     filtered[i] = callback(arr[i]);
     if(filtered[i] === true) {
       filtered[i] = arr[i];
-      return filtered[i];
-    } else {
-      return false;
-    }
+    } 
   }
+  return filtered;
 }
 
-const filtered = filter(test, arr => arr.length < 1);
+const filtered = filter(test, arr => arr.length < 4);
 console.log(filtered);
 
 module.exports = {
