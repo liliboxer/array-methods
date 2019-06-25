@@ -1,4 +1,8 @@
-const { map, filter, findByIndex, reduce } = require('./index');
+const { map, 
+  filter, 
+  findByIndex, 
+  reduce, 
+  every } = require('./index');
 
 describe('array-methods', () => {
   it('doubles array', () => {
@@ -23,6 +27,12 @@ describe('array-methods', () => {
     const arr = [2, 3, 4];
     const reduced = reduce(arr, (acc, x) => acc + x);
     expect(reduced).toEqual(9);
+  });
+
+  it('returns true', () => {
+    const arr = [1, 2, -3, 4];
+    const value = every(arr, arr => arr > 1);
+    expect(value).toEqual(true);
   });
 
 });

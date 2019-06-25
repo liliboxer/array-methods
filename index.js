@@ -9,18 +9,14 @@ function map(arr, callback) {
 function filter(arr, callback) {
   const filtered = [];
   for(let i = 0; i < arr.length; i++) {
-    if(callback(arr[i])) {
-      filtered[filtered.length] = arr[i];
-    }
+    if(callback(arr[i])) filtered[filtered.length] = arr[i];
   }
   return filtered;
 }
 
 function findByIndex(arr, callback) {
   for(let i = 0; i < arr.length; i++) {
-    if(callback(arr[i])) {
-      return i;
-    }
+    if(callback(arr[i])) return i;
   }
   return -1;
 }
@@ -33,10 +29,19 @@ function reduce(arr, callback) {
   return reduced;
 }
 
+function every(arr, callback) {
+  for(let i = 0; i < arr.length; i++) {
+    callback(arr[i]);
+  }
+  return true;
+  
+}
+
 module.exports = {
   map,
   filter,
   findByIndex,
-  reduce
+  reduce,
+  every
 };
 
