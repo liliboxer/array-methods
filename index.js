@@ -11,25 +11,42 @@ function filter(arr, callback) {
   for(let i = 0; i < arr.length; i++) {
     if(callback(arr[i])) {
       filtered[filtered.length] = arr[i];
-
     }
   }
   return filtered;
 }
 
-function reduce(arr, callback) {
-  const reduced = [];
+function findByIndex(arr, callback) {
   for(let i = 0; i < arr.length; i++) {
-    reduced[i] === callback(arr);
+    if(callback(arr[i])) {
+      return i;
+    } else {
+      return -1;
+    }
   }
-  return reduced;
 }
+
+
+
+
+// function reduce(arr, callback) {
+//   let reduced;
+//   for(let i = 0; i < arr.length; i++) {
+//     reduced = callback(arr[i]);
+//   }
+//   return reduced;
+// }
+
+// const reduced = reduce(arr, (acc, x) => acc + x);
+
+
 
 
 
 module.exports = {
   map,
   filter,
-  reduce
+  findByIndex,
+  // reduce
 };
 

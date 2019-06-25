@@ -1,4 +1,4 @@
-const { map, filter, reduce } = require('./index');
+const { map, filter, findByIndex } = require('./index');
 
 describe('array-methods', () => {
   it('doubles array', () => {
@@ -7,16 +7,22 @@ describe('array-methods', () => {
     expect(double).toEqual([2, 4, 6]);
   });
 
-  it('includes orange', () => {
+  it('words less than 4 characters', () => {
     const arr = ['max', 'orangetabby', 'cat', 'meow', '8', 'maxwell'];
     const filtered = filter(arr, arr => arr.length < 4);
     expect(filtered).toEqual(['max', 'cat', '8']);
   });
 
-  it('add numbers together', () => {
-    const arr = [2, 3, 4];
-    const reduced = reduce(arr, arr => arr += arr);
-    expect(reduced).toEqual([9]);
+  it('returns index of found item', () => {
+    const arr = [4, 319, 92, 76];
+    const index = findByIndex(arr, arr => arr > 90);
+    expect(index).toEqual(1);
   });
+
+  // it('add numbers together', () => {
+  //   const arr = [2, 3, 4];
+  //   const reduced = reduce(arr, (acc, x) => acc + x);
+  //   expect(reduced).toEqual(9);
+  // });
 
 });
