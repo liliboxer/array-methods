@@ -21,13 +21,14 @@ function filter(arr, callback) {
   const filtered = [];
   for(let i = 0; i < arr.length; i++) {
     filtered[i] = callback(arr[i]);
-    console.log('filtered', callback(arr[i]));
+    if(filtered[i] === true) {
+      filtered.push(arr[i]);
+    } return filtered;
   }
-  return filtered;
 }
 
 const filtered = filter(test, arr => arr.length < 4);
-console.log(filtered);
+console.log('hi', filtered);
 
 module.exports = {
   map,
